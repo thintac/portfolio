@@ -5,6 +5,7 @@
 <script type="text/javascript" src="<?php echo $g_js ; ?>smoothscroll.js"></script>
 <script type="text/javascript" src="<?php echo $g_js ; ?>jquery.validationEngine.js"></script>
 <script type="text/javascript" src="<?php echo $g_js ; ?>jquery.validationEngine-ja.js"></script>
+<script type="text/javascript" src="<?php echo $g_js ; ?>anime.min.js"></script>
 
 <script type="text/javascript">
 	$(document).ready( function() {

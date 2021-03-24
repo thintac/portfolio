@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+div#app{
+  width: 100%;
+  text-align: center;
+}
+
+button,label{
+  text-align: center;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: lightblue ;
+  color:blue;
+  &:hover{
+    color: lightblue ;
+    background-color:blue;
+    }
+}
+
+.slide-enter,.slide-leave-to{
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.slide-enter-to,.slide-leave{
+  transform: translateX(0);
+}
+.slide-enter-active,.slide-leave-active{
+  transition: opacity 0.5s,transform 0.5s;
+}

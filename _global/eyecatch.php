@@ -1,5 +1,5 @@
 <?php
-	//ファイル名を変数名に指定	
+	//ファイル名を変数名に指定
 	$included_files = get_included_files();
 	//新しい順に並べ替え
 	krsort($included_files);
