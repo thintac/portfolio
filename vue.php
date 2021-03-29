@@ -9,7 +9,9 @@
 
 <!DOCTYPE html>
 <html lang="<?php echo $lang; ?>">
-	<?php include_once($g."_head.php"); ?>
+	<?php
+//		include_once($g."_head.php");
+	?>
 	<body class="header-delay">
 <?php
 	include_once("./vue.body.php");

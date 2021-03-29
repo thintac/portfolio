@@ -1,90 +1,126 @@
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-<link rel="stylesheet/less" href="./vue.less ">
-
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css'>
+<link rel="stylesheet/less" href="./vue.3.less ">
 
 <div id='app'>
-	<button v-on:click="show = !show">切り替え</button>
-	<transition name="zoom" enter-active-class="animate__animated animate__zoomIn" leave-active-class ="animate__animated animate__zoomOut">
-	<p v-if="show">
-			わがは<br>
-			わがは<br>
-			わがは<br>
-			わがは<br>
-		</p>
-		<p v-else>
-			わが<br>
-			わが<br>
-			わが<br>
-			わが<br>
-		</p>
-	</transition>
+  <div class='container'>
+    <h1 class='pageTitle'>商品一覧</h1>
+    <!-- 検索欄 -->
+    <div class='search'>
+      <div class='result'>
+        検索結果<span class='count'>6件</span>
+      </div>
+      <!-- result -->
+      <div class='condition'>
+        <div class='target'>
+          <label><input type='checkbox'>セール対象</label>
+          <label><input type='checkbox'>送料無料</label>
+        </div>
+        <!-- target -->
+        <div class='sort'>
+          <label for='sort'>並び替え</label>
+          <select id='sort' class='sorting'>
+            <option value='1'>標準</option>
+            <option value='2'>価格が安い順</option>
+          </select>
+        </div>
+        <!-- sort -->
+      </div>
+      <!--condition-->
+    </div>
+    <!-- search -->
 
-<!--
-	<transition name="slide">
-		<p v-if="show">
-			わがはい<br>
-			わがはい<br>
-			わがはい<br>
-			わがはい<br>
-		</p>
-	</transition>
+    <!-- 商品一覧 -->
+    <div class='list'>
 
-	<fieldset>
-		<legend>あなたの好きな色は</legend>
-		<input type='color' v-model="color">{{color}} <br>
-		赤：<input type='range' v-model.number="red" min="0" max="255">{{red}} <br>
-		緑：<input type='range' v-model.number="green" min="0" max="255">{{green}} <br>
-		青：<input type='range' v-model.number="blue" min="0" max="255">{{blue}} <br>
+    <div class='item'>
+        <figure class='image'>
+          <div class='status'>SALE</div>
+          <img src='<?= $g_img."vue/01.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>1,580</span>円(税込)</div>
+          <div class='shipping-fee none'>送料無料</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	</fieldset>
+      <div class='item'>
+        <figure class='image'>
+          <div class='status'>SALE</div>
+          <img src='<?= $g_img."vue/02.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>1,580</span>円(税込)</div>
+          <div class='shipping-fee none'>送料無料</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	<p>ご希望到着日：{{arrival_date}}</p>
-	<input type='date' v-model='arrival_date' v-bind:min="min_date">
+      <div class='item'>
+        <figure class='image'>
+          <div class='status'>SALE</div>
+          <img src='<?= $g_img."vue/03.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>1,580</span>円(税込)</div>
+          <div class='shipping-fee'>+送料240円</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	<p>利用頻度：{{hind}}</p>
-	<select v-model="hind">
-		<option disabled value=''>select</option>
-		<option value='1st'>1st</option>
-		<option value='2nd'>2nd</option>
-	</select>
+      <div class='item'>
+        <figure class='image'>
+          <div class='status'>SALE</div>
+          <img src='<?= $g_img."vue/04.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>980</span>円(税込)</div>
+          <div class='shipping-fee none'>送料無料</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	<p>サービスはどうだった？:{{kotae}}</p>
-	<input type='radio' v-model="kotae" value="good" id="good"><label for='good'>good</label>
-	<input type='radio' v-model="kotae" value="normal" id="normal"><label for='normal'>normal</label>
-	<input type='radio' v-model="kotae" value="bad" id="bad"><label for='bad'>bad</label>
+      <div class='item'>
+        <figure class='image'>
+          <img src='<?= $g_img."vue/05.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>980</span>円(税込)</div>
+          <div class='shipping-fee none'>送料無料</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	<p>ケーキは好きかい？:{{answer}}</p>
-	<input type='checkbox' id="cake" v-model="answer" true-value="yes" false-value="no">
-	<label for='cake'>{{answer}}</label>
+      <div class='item'>
+        <figure class='image'>
+          <img src='<?= $g_img."vue/06.jpg" ?>' alt=''>
+          <figcaption>Michael<br>スマホケース</figcaption>
+        </figure>
+        <div class='detail'>
+          <div class='price'><span>1,580</span>円(税込)</div>
+          <div class='shipping-fee none'>送料無料</div>
+        </div>
+        <!-- detail -->
+      </div>
+      <!-- item -->
 
-	<input type='text' v-on:input="yearInputHandler" v-bind:value="year">
-	<p>{{year}}</p>
+    </div>
+    <!-- list -->
 
-	<textarea v-model="b_message">{{b_message}}</textarea>
-	<pre>入力内容:{{b_message}}</pre>
-
-	<p>マウスカーソルの位置:{{point.x}},{{point.y}}</p>
-	width:{{width}}<br>
-	height:{{height}}<br>
-	調べたい年: <input type='text' v-model.lazy="year"><br>
-	{{year}}年は{{isUrudoshi ? 'うるう年！' : 'ちがいます！'}}
-	<div v-show="show">
-		<p>now1: "{{now1()}}"</p>
-		<p>now2: "{{now2}}"</p>
-	</div>
-	<template v-if="stock >= 1">
-		<span class='num'>残り{{stock}}個</span>
-		<button class='btn' v-on:click="onDeleteItem">削除</button>
-	</template>
-	{{message}}
-
--->
-
-
-	<!-- <template v-else>在庫切れ</template> -->
+  </div>
+  <!-- container -->
 </div>
+<!-- app -->
 
-
-<script src='vue.js'></script>
+<script src='vue.3.js'></script>
 <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>

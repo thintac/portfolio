@@ -7,7 +7,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
 	mode: 'development',
 	devtool: 'source-map',
-	entry: './src/_js/main.js',
+//	entry: './src/_js/main.js',
 	output :{
 		path:path.resolve(__dirname,'./dist'),
 		filename: './_js/main.js',
@@ -21,21 +21,6 @@ module.exports = {
 					{
 						loader: 'vue-loader',
 					}
-				],
-			},
-			{
-				test:/\.js/,
-				exclude: /node_modules/,
-				use:[
-					{
-						loader:'babel-loader',
-						options:{
-							presets:[
-								['@babel/preset-env',{'targets':'> 0.25%, not dead'}],
-								'@babel/preset-react',
-							],
-						},
-					},
 				],
 			},
 
@@ -76,38 +61,12 @@ module.exports = {
 					},
 				],
 			},
-			{
-				test:/\.pug/,
-				use:[
-					{
-						loader:'html-loader',
-					},
-					{
-						loader:'pug-html-loader',
-						options:{
-							pretty: true,
-						},
-					},
-				],
-			},
 		],//rules
 	},
 	plugins:[
 		new VueLoaderPlugin(),
 		new MiniCssExtractPlugin({
 			filename: './_css/main.css',
-		}),
-		new HtmlWebpackPlugin({
-			template:'./src/_template/index.pug',
-			filename: 'index.html',
-		}),
-		new HtmlWebpackPlugin({
-			template:'./src/_template/access.pug',
-			filename: 'access.html',
-		}),
-		new HtmlWebpackPlugin({
-			template:'./src/_template/members/taro.pug',
-			filename: 'members/taro.html',
 		}),
 		new CleanWebpackPlugin(),
 	],
