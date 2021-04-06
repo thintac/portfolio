@@ -1,5 +1,5 @@
 <?php
-	//ファイル名を変数名に指定	
+	//ファイル名を変数名に指定
 	$included_files = get_included_files();
 	//新しい順に並べ替え
 	krsort($included_files);
@@ -11,14 +11,14 @@
 
 <section id="<?php echo $get_id; ?>">
 	<div class="base">
-			
+
 		<div class="">
 			<div class="title_w lll ac txt_shadow">
 				<img src="<?=$g_img.$get_id."/".$get_id ?>.svg" class='title_img'>
 				<span class="s">変わらない本質を</span>
 			</div>
 		</div>
-			
+
 			<div class='txt_w ac txt_shadow'>
 				<br>
 				比叡山の麓にある小さなデザイン事務所です。<br>

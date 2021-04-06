@@ -9,5 +9,5 @@
 ?>
 
 <section id="<?php echo $get_id; ?>">
-	<img src="<?= $g_img."shin_gi_tai.svg" ?>" alt="" class='eye_img' >
+	<img src="<?= $g_img."shin_gi_tai.svg" ?>" alt="" class='eye_img'>
 </section>
